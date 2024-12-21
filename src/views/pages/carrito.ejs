@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <%- include('../partials/head') %>
+</head>
+
+<body>
+    <%- include('../partials/navbar') %>
+    <% function formatearCantidad(numero) { 
+        let numeroCadena = numero.toString();
+        numeroCadena = numeroCadena.replace(/\B(?=(\d{3})+(?!\d))/g, '.'); 
+        return numeroCadena; 
+    } %>
+
+    <div class="jumbotron mt-5">
+        <% for (let i = 0; i < transacciones.length; i++) { %>
+            <div class="d-flex justify-content-center align-items-center gap-3">
+                <h1 class="display-6 m-0 nombreProd">
+                    <%= transacciones[i]["nombre"] %>
+                </h1>
+
+                <p class="precio-carrito m-0">
+                    $ <%= formatearCantidad(transacciones[i]["precio"]) %>
+                </p>
+
+                <div class="d-flex align-items-center gap-2"> 
+                    <label for="cantidad" class="m-0">Cantidad:</label>
+                    <!-- Botón de resta -->
+                    <button class="btn btn-primary restar" type="button" data-role="<%= i %>">-</button>
+                    
+                    <!-- Cantidad actual -->
+                    <span class="m-0 cantidad" id="cantidad-<%= i %>"> 
+                        <%= transacciones[i]["cantidad"] %> 
+                    </span>
+                    
+                    <!-- Botón de suma -->
+                    <button class="btn btn-primary sumar" type="button" data-role="<%= i %>">+</button>
+                </div>
+            </div>
+            <hr class="my-4">
+        <% } %>
+        
+        <div class="container mx-auto">
+            <a class="btn btn-primary btn-lg" href="#" role="button" id="checkout">Pagar</a>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+    <script src="/script/carrito.js"></script>
+
+</body>
+</html>

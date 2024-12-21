@@ -1,0 +1,10 @@
+
+---- Success ----
+4242424242424242
+cvc = 3 digitos aleatorios
+Fecha caducidad= Cualquier fecha futura
+
+---- Rechazado ----
+4000000000009995
+cvc = 3 digitos aleatorios
+Fecha caducidad= Cualquier fecha futura

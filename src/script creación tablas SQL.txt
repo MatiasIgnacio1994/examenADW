@@ -1,0 +1,20 @@
+CREATE DATABASE powermusic CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE powermusic;
+CREATE TABLE contactos (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(100) COLLATE utf8mb4_general_ci NOT NULL,
+    correo VARCHAR(100) COLLATE utf8mb4_general_ci NOT NULL,
+    mensaje VARCHAR(100) COLLATE utf8mb4_general_ci NOT NULL,
+    createdAt DATE NOT NULL,
+    updatedAt DATE NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE registrousers (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    email VARCHAR(100) COLLATE utf8mb4_general_ci NOT NULL,
+    password VARCHAR(100) COLLATE utf8mb4_general_ci NOT NULL,
+    createdAt DATE NOT NULL,
+    updatedAt DATE NOT NULL,
+    PRIMARY KEY (id),
+    UNIQUE KEY indiceemail (email) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci

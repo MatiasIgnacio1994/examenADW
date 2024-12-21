@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FAVICON -->
+    <title>PowerMusic</title>
+    <%- include('../partials/head') %>
+</head>
+
+<body>
+    <%- include('../partials/navbar')%>
+
+        <div class="posCompra">
+            <div class="card tarjetaPosCompra" style="width: 18rem;">
+                <button type="button" class="btn btn-success">Success!</button>
+                <div class="card-body">
+                    <h5 class="card-title cardCenter"><b>Compra exitosa</b></h5>
+                    <br>
+                    <p class="card-text cardCenter">Tu compra ha sido realizada exitosamente.<br><br>
+                        !Muchas gracias por tu preferencia!
+                    </p>
+                    <a href="#" class="btn btn-primary buttonPosCompra" id="posCompraVolver"><b>Volver</b></a>
+                </div>
+            </div>
+        </div>
+        <script src="/script/posCompra.js"></script>
+        <%- include('../partials/footer')%>
+</body>
+
+</html>
